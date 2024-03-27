@@ -1,0 +1,47 @@
+{
+  "label": "Collection sum",
+  "description": "Sum a collection on a property",
+  "category": "CRUD",
+  "icon": { "name": "DataIcon", "color": "Teal" },
+  "options": [
+    {
+      "name": "collection",
+      "label": "Collection",
+      "meta": {
+        "type": "Collection",
+        "validations": { "required": true }
+      }
+    },
+    {
+      "meta": {
+        "type": "Property",
+        "allowedKinds": ["BOOLEAN", "DECIMAL", "INTEGER", "PRICE", "SERIAL"],
+        "model": "collection",
+        "validations": { "required": true }
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "collection",
+            "action": "CLEAR"
+          }
+        ]
+      },
+      "name": "property",
+      "label": "Property"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Number"
+        },
+        "validations": { "required": true }
+      },
+      "name": "out",
+      "label": "As",
+      "info": "The resulting sum of the collection."
+    }
+  ],
+  "yields": "NONE"
+}
